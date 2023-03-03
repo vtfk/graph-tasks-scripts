@@ -1,0 +1,31 @@
+{
+  "name": "graph-tasks-scripts",
+  "version": "1.0.0",
+  "description": "A collection of useful/not useful scripts to do queries against Microsoft Graph API",
+  "main": "index.js",
+  "scripts": {
+    "getAllTeams": "node \"scripts/Microsoft Teams/getAllTeams/index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtfk/graph-tasks-scripts.git"
+  },
+  "keywords": [
+    "scripts",
+    "graph",
+    "tasks"
+  ],
+  "author": "Jørgen og Nils",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vtfk/graph-tasks-scripts/issues"
+  },
+  "homepage": "https://github.com/vtfk/graph-tasks-scripts#readme",
+  "dependencies": {
+    "@azure/msal-node": "^1.15.0",
+    "@json2csv/plainjs": "^6.1.2",
+    "@vtfk/logger": "^4.3.2",
+    "dotenv": "^16.0.3",
+    "node-cache": "^5.1.2"
+  }
+}

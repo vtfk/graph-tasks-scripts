@@ -15,7 +15,8 @@ GRAPH_SCOPE=https://graph.microsoft.com/.default or something else you need
 [Script GetAllTeams](/scripts/Microsoft%20Teams/getAllTeams/index.js)
 
 - Set up config if you need something else than default
-- Run from VSCode (insert image)
+- Run from VSCode
+- ![image](https://user-images.githubusercontent.com/25528003/222729900-f563bff2-7a1b-453e-a1bb-7d66e2a80dbb.png)
 - Result is found in result folder within [Script directory](/scripts/Microsoft%20Teams/getAllTeams)
 
 # TODO: How to create a new script

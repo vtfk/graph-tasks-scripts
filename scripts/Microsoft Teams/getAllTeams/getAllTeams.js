@@ -12,7 +12,7 @@ const getAllGroups = async (options) => {
 
   const graphOptions = {
     advanced: false,
-    onlyFirstPage: true,
+    onlyFirstPage: false,
     queryParams
   }
   const groups = await pagedGraphRequest('groups', graphOptions)

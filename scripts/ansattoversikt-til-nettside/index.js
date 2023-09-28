@@ -55,8 +55,10 @@
     const employees = await pagedGraphRequest(resource, graphOptions)
     const OUs = []
     const filtered = employees.value.filter(emp => {
-      return emp.onPremisesDistinguishedName && emp.onPremisesDistinguishedName.includes('AUTO USERS') && emp.companyName
+      return (emp.onPremisesDistinguishedName && emp.onPremisesDistinguishedName.includes('AUTO USERS') && emp.companyName && !emp.onPremisesDistinguishedName.includes('OU=TEST') && emp.companyName !== null && (!emp.mailNickname.includes('.test') && !emp.mailNickname.includes('-test') && !emp.mailNickname.includes('test.')))
     })
+
+    // (emp.businessPhones.length > 0 || emp.mobilePhone !== null) Denne kan vi ikke bruke, res = 3846
 
     const res = { count: filtered.length, value: filtered }
     writeFileSync(`${__dirname}/users-filtered.json`, JSON.stringify(res, null, 2))

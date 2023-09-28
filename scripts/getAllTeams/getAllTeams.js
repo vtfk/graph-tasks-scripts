@@ -1,4 +1,4 @@
-const { pagedGraphRequest } = require('../../../lib/graphRequest')
+const { pagedGraphRequest } = require('../../lib/graphRequest')
 
 const getAllGroups = async (options) => {
   if (!options) options = {}
@@ -13,9 +13,8 @@ const getAllGroups = async (options) => {
   const graphOptions = {
     advanced: false,
     onlyFirstPage: false,
-    queryParams
   }
-  const groups = await pagedGraphRequest('groups', graphOptions)
+  const groups = await pagedGraphRequest(`groups?${queryParams}`, graphOptions)
 
   return groups
   // Hent alle Teams fra disse gruppene
@@ -28,9 +27,8 @@ const getTeam = async (teamId, options) => {
   const graphOptions = {
     advanced: false,
     onlyFirstPage: false,
-    queryParams: options.select
   }
-  const team = await pagedGraphRequest(`teams/${teamId}`, graphOptions)
+  const team = await pagedGraphRequest(`teams/${teamId}?${options.select}`, graphOptions)
 
   return team
 }

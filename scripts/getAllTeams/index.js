@@ -2,7 +2,7 @@
   const { getAllGroups, getTeam } = require('./getAllTeams')
   const { logger } = require('@vtfk/logger')
   const { Parser } = require('@json2csv/plainjs')
-  const writeResult = require('../../../lib/writeResult')
+  const writeResult = require('../../lib/writeResult')
 
   const scriptDir = './scripts/Microsoft Teams/getAllTeams'
 
@@ -20,7 +20,6 @@
   const teamOptions = {
     select: "$select=id,resourceProvisioningOptions,displayName"
   }
-
 
   // Script
   const result = []

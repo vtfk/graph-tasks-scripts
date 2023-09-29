@@ -12,7 +12,7 @@ const getAllGroups = async (options) => {
 
   const graphOptions = {
     advanced: false,
-    onlyFirstPage: false,
+    onlyFirstPage: false
   }
   const groups = await pagedGraphRequest(`groups?${queryParams}`, graphOptions)
 
@@ -26,7 +26,7 @@ const getTeam = async (teamId, options) => {
 
   const graphOptions = {
     advanced: false,
-    onlyFirstPage: false,
+    onlyFirstPage: false
   }
   const team = await pagedGraphRequest(`teams/${teamId}?${options.select}`, graphOptions)
 

@@ -12,13 +12,13 @@
   // Definer groups options her
   const groupOptions = {
     filter: "$filter=resourceProvisioningOptions/Any(x:x eq 'Team')",
-    select: "$select=id,resourceProvisioningOptions,displayName,createdDateTime,description,deletedDateTime,mail,renewedDateTime,securityEnabled,visibility",
-    expand: "$expand=owners($select=displayName,mail)"
+    select: '$select=id,resourceProvisioningOptions,displayName,createdDateTime,description,deletedDateTime,mail,renewedDateTime,securityEnabled,visibility',
+    expand: '$expand=owners($select=displayName,mail)'
   }
 
   // Definer teams options her
   const teamOptions = {
-    select: "$select=id,resourceProvisioningOptions,displayName"
+    select: '$select=id,resourceProvisioningOptions,displayName'
   }
 
   // Script
@@ -33,7 +33,7 @@
     logger('info', ['Det gikk bra 😁', 'Vi fant antall grupper', groupRes.count])
 
     // const groupRes = require('./groups.json')
-    
+
     let activeGroups = groupRes.value.filter(group => !group.displayName.startsWith('Exp0822'))
     activeGroups = { count: activeGroups.length, value: activeGroups }
     writeResult(__dirname, `${timestamp}-activegroups.json`, JSON.stringify(activeGroups, null, 2))
@@ -57,10 +57,9 @@
     writeResult(__dirname, `${timestamp}-activegroups.csv`, csvActiveGroups)
 
     const runTime = Math.abs(new Date() - startTime)
-    const runMinutes = Math.floor((runTime/1000)/60)
+    const runMinutes = Math.floor((runTime / 1000) / 60)
 
     logger('info', [`Ferdig! Scriptet kjørte i ${runMinutes} minutter 😁`, 'Vi fant antall grupper', groupRes.count, 'Antall aktive grupper', activeGroups.count])
-
   } catch (error) {
     logger('error', error)
   }

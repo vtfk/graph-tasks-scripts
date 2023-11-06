@@ -2,7 +2,7 @@
   const { logger, logConfig } = require('@vtfk/logger')
   const { appendFileSync, existsSync, mkdirSync, writeFileSync } = require('fs')
   const { pagedGraphRequest } = require('../../lib/graphRequest')
-  const { EMPLOYEE_UPN_SUFFIX, prokomApiURL } = require('./config')
+  const { EMPLOYEE_UPN_SUFFIX, prokomApiURL, prokomApiKey } = require('./config')
   const axios = require('axios').default
 
   const LOG_DIR = `${__dirname}/logs`
@@ -97,7 +97,7 @@
 
   try {
     logger('info', ['Sending userinfo to prokom'])
-    await axios.post(prokomApiURL, mappedEmployees)
+    await axios.post(prokomApiURL, mappedEmployees, {headers: {Authorization: `Bearer ${prokomApiKey}`}})
     logger('info', ['Finished sending users to prokom'])
   } catch (error) {
     logger('error', ['Failed when sending data to prokom', error.response?.data || error.stack || error.toString()])

@@ -4,7 +4,8 @@
   "description": "A collection of useful/not useful scripts to do queries against Microsoft Graph API",
   "main": "index.js",
   "scripts": {
-    "getAllTeams": "node \"scripts/Microsoft Teams/getAllTeams/index.js\""
+    "getAllTeams": "node \"scripts/getAllTeams/index.js\"",
+    "ansattOversiktTilNettside": "node \"scripts/ansattoversikt-til-nettside/index.js\""
   },
   "repository": {
     "type": "git",

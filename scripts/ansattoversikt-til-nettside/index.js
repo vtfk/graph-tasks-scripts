@@ -88,8 +88,8 @@
       }
     })
     logger('info', ['Finished mapping users'])
-    // const res = { count: mappedEmployees.length, value: mappedEmployees }
-    // writeFileSync(`${__dirname}/users-filtered.json`, JSON.stringify(res, null, 2))
+    const res = { count: mappedEmployees.length, value: mappedEmployees }
+    writeFileSync(`${__dirname}/users-filtered.json`, JSON.stringify(res, null, 2))
   } catch (error) {
     logger('error', ['Failed when mapping users', error.response?.data || error.stack || error.toString()])
     process.exit(1)
@@ -97,7 +97,7 @@
 
   try {
     logger('info', ['Sending userinfo to prokom'])
-    await axios.post(prokomApiURL, mappedEmployees, {headers: {Authorization: `Bearer ${prokomApiKey}`}})
+    // await axios.post(prokomApiURL, mappedEmployees, { headers: { Authorization: `Bearer ${prokomApiKey}` } })
     logger('info', ['Finished sending users to prokom'])
   } catch (error) {
     logger('error', ['Failed when sending data to prokom', error.response?.data || error.stack || error.toString()])

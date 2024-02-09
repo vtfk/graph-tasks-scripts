@@ -97,7 +97,7 @@
 
   try {
     logger('info', ['Sending userinfo to prokom'])
-    // await axios.post(prokomApiURL, mappedEmployees, { headers: { Authorization: `Bearer ${prokomApiKey}` } })
+    await axios.post(prokomApiURL, mappedEmployees, { headers: { Authorization: `Bearer ${prokomApiKey}` } })
     logger('info', ['Finished sending users to prokom'])
   } catch (error) {
     logger('error', ['Failed when sending data to prokom', error.response?.data || error.stack || error.toString()])

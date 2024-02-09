@@ -89,7 +89,8 @@
     })
     logger('info', ['Finished mapping users'])
     const res = { count: mappedEmployees.length, value: mappedEmployees }
-    writeFileSync(`${__dirname}/users-filtered.json`, JSON.stringify(res, null, 2))
+    if (!existsSync(`${__dirname}/results`)) mkdirSync(`${__dirname}/results`)
+    writeFileSync(`${__dirname}/results/users-filtered.json`, JSON.stringify(res, null, 2))
   } catch (error) {
     logger('error', ['Failed when mapping users', error.response?.data || error.stack || error.toString()])
     process.exit(1)

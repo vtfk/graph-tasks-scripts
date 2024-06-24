@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "getAllTeams": "node \"scripts/getAllTeams/index.js\"",
-    "ansattOversiktTilNettside": "node \"scripts/ansattoversikt-til-nettside/index.js\""
+    "ansattOversiktTilNettside": "node \"scripts/ansattoversikt-til-nettside/index.js\"",
+    "brukereTilCherwell": "node \"scripts/brukere-til-cherwell/index.js\""
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,10 @@
   "dependencies": {
     "@azure/msal-node": "^2.4.0",
     "@json2csv/plainjs": "^6.1.2",
-    "@vtfk/logger": "^4.3.2",
+    "@vtfk/logger": "^6.1.0",
     "axios": "^1.5.1",
     "dotenv": "^16.3.1",
-    "node-cache": "^5.1.2"
+    "node-cache": "^5.1.2",
+    "papaparse": "^5.4.1"
   }
 }

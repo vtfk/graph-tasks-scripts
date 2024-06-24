@@ -2,7 +2,7 @@
   const { logger, logConfig } = require('@vtfk/logger')
   const { appendFileSync, existsSync, mkdirSync, writeFileSync } = require('fs')
   const { pagedGraphRequest } = require('../../lib/graphRequest')
-  const { STUDENT_UPN_SUFFIX } = require('./config')
+  const { STUDENT_UPN_SUFFIX, BRUKERE_TIL_CHERWELL_RESULT_DESTINATION_PATH } = require('./config')
   const axios = require('axios').default
   const { unparse } = require('papaparse')
   const LOG_DIR = `${__dirname}/logs`
@@ -74,6 +74,7 @@
       delimiter: ','
     })
     writeFileSync(`${__dirname}/result/users-filtered.csv`, csv)
+    if(BRUKERE_TIL_CHERWELL_RESULT_DESTINATION_PATH) writeFileSync(`${BRUKERE_TIL_CHERWELL_RESULT_DESTINATION_PATH}/users.csv`, csv)
   } catch (error) {
     logger('error', ['Failed when mapping users', error.response?.data || error.stack || error.toString()])
     process.exit(1)

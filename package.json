@@ -6,7 +6,8 @@
   "scripts": {
     "getAllTeams": "node \"scripts/getAllTeams/index.js\"",
     "ansattOversiktTilNettside": "node \"scripts/ansattoversikt-til-nettside/index.js\"",
-    "brukereTilCherwell": "node \"scripts/brukere-til-cherwell/index.js\""
+    "brukereTilCherwell": "node \"scripts/brukere-til-cherwell/index.js\"",
+    "SDSnotTeamified": "node \"scripts/sds-not-teamified/index.js\""
   },
   "repository": {
     "type": "git",

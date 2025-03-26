@@ -77,7 +77,8 @@
         Id: emp.id, // her kan vi bruke objektid fra aad
         Name: emp.displayName, // bruker DisplayName
         Phone: businessPhone,
-        Mobile: emp.mobilePhone, // Vi bruker Mobile her
+        // Mobile: businessPhone, // Business phone = "Telefon arbeid" i Visma. Det er kun det feltet som skal vises på nettsidene
+        Mobile: emp.mobilePhone, // Mobil arbeid i SD Works. Det er kun det feltet som skal vises på nettsidene
         Email: email, // Her må vi mappe - sjekker onPremisesDistinguishedName for hvilket OU - deretter mailnickname + suffix for hvilket OU man kommer fra (VTFK eller TFK eller VFK)
         Organization: emp.companyName, // CompanyName
         Subdivision: emp.department, // Department

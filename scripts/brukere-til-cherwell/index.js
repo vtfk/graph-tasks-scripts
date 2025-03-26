@@ -58,7 +58,8 @@
         Company: student.companyName, // CompanyName
         Department: student.department, // Department
         Email: student.userPrincipalName,
-        // EmailPrefix: student.mailNickname,
+        MailNickname: student.mailNickname,
+        MobilePhone: student.mobilePhone || ''
         // Role: student.jobTitle, // JobTitle
         // EmployeeNumber: student.extension_0fe49c4c681d427aa4cad2252aba12f5_employeeNumber || 'missing employeeNumber from Graph'
       }

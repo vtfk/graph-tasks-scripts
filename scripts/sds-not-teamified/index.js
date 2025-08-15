@@ -1,9 +1,9 @@
-
+﻿
 (async () => {
   const { logger, logConfig } = require('@vtfk/logger')
   const { appendFileSync, existsSync, mkdirSync, writeFileSync } = require('fs')
   const { pagedGraphRequest } = require('../../lib/graphRequest')
-  const axios = require('axios').default
+  const writeResult = require('../../lib/writeResult')
 
   const LOG_DIR = `${__dirname}/logs`
   if (!existsSync(LOG_DIR)) mkdirSync(LOG_DIR)
@@ -58,7 +58,7 @@
     const notTeamified = groups.value.filter(group => !group.resourceProvisioningOptions.includes('Team'))
     logger('info', [`Got ${notTeamified.length} not teamified groups`])
     const res = { count: notTeamified.length, value: notTeamified }
-    writeFileSync(`${__dirname}/not-teamified.json`, JSON.stringify(res, null, 2))
+    writeResult(__dirname, 'not-teamified.json', JSON.stringify(res, null, 2))
   } catch (error) {
     logger('error', ['Failed when fetching groups from graph', error.response?.data || error.stack || error.toString()])
     process.exit(1)
